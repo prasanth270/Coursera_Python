@@ -101,7 +101,7 @@ def printlist():
 """ Importing & Working with Python Libraries """
 import random
 
-print (random.random()) #Prints a random number
+print (random.random()) #Prints a random real number between 0 and 1
 
 print (random.randint(4, 6)) #Prints random number in range 4, 6 including 4 & 6
 
