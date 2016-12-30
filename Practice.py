@@ -65,3 +65,56 @@ def countdown1():
     print()
     print("BLASTOFF!")
 #%%
+"""Working With Lists"""
+
+"""Lists in python can be a combination of integers, characters & strings"""
+def createMlist(): #Manual List Creation
+    intList = [1,2,3,4,5,6]
+    strList = ['a', 'b', 'c']
+    stringList = ["my","name","is"]
+    comboList = ["string",24, 'a', -3]
+    
+"""list[2:4] --> Prints elements at position 2, 3"""
+"""intList[:3] --> Prints elements till position 3 excluding 3 [1, 2, 3]"""
+"""intlist.append(7) --> appends 7 to the end"""
+#%%
+"""Average of numbers in a list"""
+def averagelist(lis):
+    sum_ = 0
+    #count = 0
+    for val in lis: #Iterate over the list
+        sum_ += val
+        #count += 1
+    print("The average of given list is", sum_/len(lis))
+#%%
+"""Create a List using the range() function and converting to a list"""
+def createAutoList():
+    print(list(range(2, 21, 3)))
+#%%
+""" Accessing Lists Inside a List """
+def printlist():
+    newList = [["CMPE200", 100], ["CMPE220", 90], ["CMPE240", 80]]
+    print(newList[0]) #Prints ['CMPE200', 100]
+    print(newList[1][1]) #Prints 90
+
+#%%
+""" Importing & Working with Python Libraries """
+import random
+
+print (random.random()) #Prints a random number
+
+print (random.randint(4, 6)) #Prints random number in range 4, 6 including 4 & 6
+
+""" random.choose(list) for choosing a random position from a list"""
+#%%
+
+
+
+
+
+
+
+
+
+
+
