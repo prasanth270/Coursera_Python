@@ -143,10 +143,11 @@ import random
 
 def problem2_4():
     """ Make a list of 10 random reals between 30 and 35 """
-    random.seed()
+    random.seed(70)
     lis = []
     for val in range(0, 10, 1):
-        lis.append(random.randint(30, 34) + random.random())
+        lis.append(random.random()*5 + 30) #Gives a Random number between 0 & 1 
+        #When Multiplied by 4 is between 0 and 4 + 30 gives my range
     print (lis)
     pass # replace this pass (a do-nothing) statement with your code
 #%%

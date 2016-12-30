@@ -107,14 +107,122 @@ print (random.randint(4, 6)) #Prints random number in range 4, 6 including 4 & 6
 
 """ random.choose(list) for choosing a random position from a list"""
 #%%
+""" Working With Tuples """
+def createTuple():
+    tup = ('a', 'b', 'c')
+    """ Tuples are immutable"""
+    """ Ordered Data type. i.e., tup[0] gives 'a' """
+#%%
+""" Working with Dictonaries """
+def createDictonary():
+    dic = {"key":"Value", "Key1":"Value1"}
+    """ Un ordered Data type. i.e., dic[0] will not work."""
+    """ dic["key"] gives 'Value' """
+    """ items, keys, values """
+    """ items are tuples. e.g., ('key', 'value')"""
+    for item in dic.items():
+        print(item) #prints Tuple
+    
+    for key, value in dic.items():
+        print(key,"      ", value) #Key Value Pair
+    
+    for value in dic.values():
+        print(value) #Prints Values of all keys
 
+    for key in dic.keys():
+        print(key) #Prints Keys
+    
+    dic["key2"] = "Value2" #Appends New Tuple to Dictonary
+    print (dic)
+#%%
+""" Working with files """
+def readfile(fileName):
+    infile = open(fileName) #open file
+    
+    for line in infile:
+        print(line, end="") #print each line
 
+    infile.close();
+#%%
 
+def copyfile(fileName, newFile):
+    infile = open(fileName)
+    outfile = open(newFile, 'w')
+    
+    for line in infile:
+        outfile.write(line)
+        
+    infile.close()
+    outfile.close()
+#%%
 
+def createFile(fileName, name, age, major):
+    outfile = open(fileName, 'w')
+    
+    outfile.write("My Name is " + name + "\n")
+    outfile.write("My Age is " + str(age) + "\n")
+    outfile.write("My Majoe is " + major + "\n")
+    
+    outfile.close()
+    
 
+#%%
+def count_words(filename):        
+    text_file = open(filename)
+    words_dic = {}
+    
+    for line in text_file:         # step through each line in the text file
+        for word in line.lower().split():   # split into a list of words
+            word = word.strip("'?,.;!-/\"") # strip out the stuff we ignore
+            if word not in words_dic:
+                words_dic[word] = 0      # add word to words with 0 count
+            words_dic[word] = words_dic[word] + 1    # add 1 to the count
+    
+    text_file.close() 
+                   
+    # Sorts the dictionary words into a list and then print them out
+    print("List of words in the file with number of times each appears.")
+    word_list = sorted(words_dic)
+    for word in word_list:
+        print(words_dic[word], word)
 
+#%%
+import csv
+def readCSVFile(filename):
+    
+    infile = open(filename)
+    
+    for row in csv.reader(infile):
+        #print(row) #Prints a Tuple
+        for i in range(0, len(row) -1 ):
+            print(row[i])
+    
+    infile.close()
+#%%
+import csv
 
-
-
-
-
+def writeCSVFile(filename):
+    file = open(filename, 'w', newline="")
+    
+    while True:
+        newName = input("Enter Your Friend's Name: ")
+        if newName =="":
+            break
+        newPhone = input("Enter His Phone Number: ")
+        
+        print(newName)
+        print(newPhone)
+        
+        newLine = []
+        newLine.append(newName)
+        newLine.append(newPhone)
+        csv.writer(file).writerow(newLine)
+        
+    file.close()
+#%%
+    
+    
+    
+    
+    
+    
