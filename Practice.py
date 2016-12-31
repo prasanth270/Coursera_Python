@@ -220,8 +220,18 @@ def writeCSVFile(filename):
         
     file.close()
 #%%
+""" Exceptions """
+def exceptionFunction():
     
-    
+    input_ = input("Enter a Number: ")
+    print(type(input_))
+    try:
+        num = float(input_)
+        print(num)
+    except Exception as e:
+        print("Exception Occuerd!", e)
+
+#%%
     
     
     
